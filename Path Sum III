@@ -1,0 +1,51 @@
+from collections import defaultdict
+from typing import Optional
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
+        def dfs(node, curr_sum):
+            nonlocal count
+            if not node:
+                return
+            
+            # Update the current sum and count the number of valid paths
+            curr_sum += node.val
+            if curr_sum == targetSum:
+                count += 1
+            count += prefix_sum[curr_sum - targetSum]
+            
+            # Update the prefix sum with the current sum
+            prefix_sum[curr_sum] += 1
+            
+            # Traverse the left and right children
+            dfs(node.left, curr_sum)
+            dfs(node.right, curr_sum)
+            
+            # Remove the current sum from the prefix sum to backtrack
+            prefix_sum[curr_sum] -= 1
+        
+        count = 0
+        prefix_sum = defaultdict(int)
+        dfs(root, 0)
+        return count
+
+# Example usage:
+# Construct the binary tree [10,5,-3,3,2,null,11,3,-2,null,1]
+root = TreeNode(10)
+root.left = TreeNode(5)
+root.right = TreeNode(-3)
+root.left.left = TreeNode(3)
+root.left.right = TreeNode(2)
+root.right.right = TreeNode(11)
+root.left.left.left = TreeNode(3)
+root.left.left.right = TreeNode(-2)
+root.left.right.right = TreeNode(1)
+
+sol = Solution()
+print(sol.pathSum(root, 8))  # Output: 3
