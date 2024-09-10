@@ -1,0 +1,35 @@
+import java.util.PriorityQueue;
+
+class Solution {
+    public long totalCost(int[] costs, int k, int candidates) {
+        PriorityQueue<Integer> firstK = new PriorityQueue<>();
+        PriorityQueue<Integer> lastK = new PriorityQueue<>();
+        int left = 0, right = costs.length - 1;
+        long total = 0;
+
+        for (int i = 0; i < candidates; i++) {
+            if (left <= right) {
+                firstK.add(costs[left++]);
+            }
+            if (left <= right) {
+                lastK.add(costs[right--]);
+            }
+        }
+
+        for (int i = 0; i < k; i++) {
+            if (lastK.isEmpty() || (!firstK.isEmpty() && firstK.peek() <= lastK.peek())) {
+                total += firstK.poll();
+                if (left <= right) {
+                    firstK.add(costs[left++]);
+                }
+            } else {
+                total += lastK.poll();
+                if (left <= right) {
+                    lastK.add(costs[right--]);
+                }
+            }
+        }
+
+        return total;
+    }
+}
