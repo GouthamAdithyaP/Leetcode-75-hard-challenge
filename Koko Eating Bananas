@@ -1,0 +1,31 @@
+class Solution {
+    public int minEatingSpeed(int[] piles, int h) {
+        int left = 1; // Minimum possible eating speed
+        int right = Integer.MIN_VALUE; // Maximum possible eating speed
+
+        // Find the maximum value in the piles array
+        for (int pile : piles) {
+            right = Math.max(right, pile);
+        }
+
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            int hoursNeeded = 0;
+
+            // Calculate the number of hours needed to eat all bananas with the current eating speed
+            for (int pile : piles) {
+                hoursNeeded += (pile + mid - 1) / mid;
+            }
+
+            if (hoursNeeded > h) {
+                // If the current eating speed is too slow, update the left pointer
+                left = mid + 1;
+            } else {
+                // If the current eating speed is fast enough, update the right pointer
+                right = mid;
+            }
+        }
+
+        return left;
+    }
+}
