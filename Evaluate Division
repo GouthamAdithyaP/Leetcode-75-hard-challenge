@@ -1,0 +1,31 @@
+from collections import defaultdict
+
+class Solution:
+    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+        # Construct the graph
+        graph = defaultdict(dict)
+        for (numerator, denominator), value in zip(equations, values):
+            graph[numerator][denominator] = value
+            graph[denominator][numerator] = 1 / value
+        
+        # Depth-first search to find division result
+        def dfs(start, end, visited):
+            if start not in graph or end not in graph:
+                return -1.0
+            if start == end:
+                return 1.0
+            visited.add(start)
+            for neighbor, value in graph[start].items():
+                if neighbor not in visited:
+                    result = dfs(neighbor, end, visited)
+                    if result != -1.0:
+                        return value * result
+            return -1.0
+        
+        # Calculate division results for queries
+        results = []
+        for query in queries:
+            start, end = query
+            results.append(dfs(start, end, set()))
+        
+        return results
