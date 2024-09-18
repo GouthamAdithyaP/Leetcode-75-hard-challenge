@@ -1,0 +1,14 @@
+class Solution:
+    def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
+        visited = set()  # To keep track of visited rooms
+        
+        def dfs(room):
+            visited.add(room)  # Mark the current room as visited
+            for key in rooms[room]:
+                if key not in visited:
+                    dfs(key)  # Visit the next room
+            
+        dfs(0)  # Start DFS from room 0
+        
+        # Check if all rooms have been visited
+        return len(visited) == len(rooms)
