@@ -1,0 +1,22 @@
+from collections import defaultdict
+
+class Solution:
+    def minReorder(self, n: int, connections: List[List[int]]) -> int:
+        # Create an adjacency list to represent the graph
+        graph = defaultdict(list)
+        for a, b in connections:
+            graph[a].append((b, 1))  # Add edge from a to b with direction a -> b
+            graph[b].append((a, 0))  # Add edge from b to a with direction b -> a
+        
+        def dfs(city, parent):
+            nonlocal change_count
+            for neighbor, direction in graph[city]:
+                if neighbor != parent:
+                    if direction == 1:  # If the edge needs to be reversed
+                        change_count += 1
+                    dfs(neighbor, city)
+        
+        change_count = 0
+        dfs(0, -1)  # Start DFS from city 0 with no parent
+        
+        return change_count
