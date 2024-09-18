@@ -1,0 +1,43 @@
+import java.util.PriorityQueue;
+import java.util.HashSet;
+
+class SmallestInfiniteSet {
+    private int current;
+    private PriorityQueue<Integer> minHeap;
+    private HashSet<Integer> addedBack;
+
+    public SmallestInfiniteSet() {
+        this.current = 1;
+        this.minHeap = new PriorityQueue<>();
+        this.addedBack = new HashSet<>();
+    }
+
+    public int popSmallest() {
+        if (!minHeap.isEmpty()) {
+            int smallest = minHeap.poll();
+            addedBack.remove(smallest);
+            return smallest;
+        } else {
+            return current++;
+        }
+    }
+
+    public void addBack(int num) {
+        if (num < current && addedBack.add(num)) {
+            minHeap.add(num);
+        }
+    }
+
+    public static void main(String[] args) {
+        // Example usage:
+        SmallestInfiniteSet smallestInfiniteSet = new SmallestInfiniteSet();
+        smallestInfiniteSet.addBack(2);
+        System.out.println(smallestInfiniteSet.popSmallest()); // return 1
+        System.out.println(smallestInfiniteSet.popSmallest()); // return 2
+        System.out.println(smallestInfiniteSet.popSmallest()); // return 3
+        smallestInfiniteSet.addBack(1);
+        System.out.println(smallestInfiniteSet.popSmallest()); // return 1
+        System.out.println(smallestInfiniteSet.popSmallest()); // return 4
+        System.out.println(smallestInfiniteSet.popSmallest()); // return 5
+    }
+}
