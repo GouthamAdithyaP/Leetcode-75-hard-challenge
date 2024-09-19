@@ -1,0 +1,22 @@
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        // Base case: if root is null or root is either p or q, return root
+        if (root == null || root == p || root == q) {
+            return root;
+        }
+        
+        // Recursively search for p and q in the left and right subtrees
+        TreeNode leftLCA = lowestCommonAncestor(root.left, p, q);
+        TreeNode rightLCA = lowestCommonAncestor(root.right, p, q);
+        
+        // If both p and q are found in the left and right subtrees respectively,
+        // or one is found in one subtree and the other in the other subtree, then
+        // the current node is the lowest common ancestor
+        if (leftLCA != null && rightLCA != null) {
+            return root;
+        }
+        
+        // Otherwise, return the non-null result (if any)
+        return leftLCA != null ? leftLCA : rightLCA;
+    }
+}
