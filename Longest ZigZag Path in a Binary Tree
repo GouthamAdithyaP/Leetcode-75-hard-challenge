@@ -1,0 +1,37 @@
+class Solution {
+    private int maxZigZag = 0;
+
+    public int longestZigZag(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        
+        // Recursive helper function to perform DFS traversal
+        dfs(root.left, 1, true);
+        dfs(root.right, 1, false);
+        
+        return maxZigZag;
+    }
+    
+    private void dfs(TreeNode node, int length, boolean isLeft) {
+        if (node == null) {
+            return;
+        }
+        
+        // Update the maxZigZag value if the current length is greater
+        maxZigZag = Math.max(maxZigZag, length);
+        
+        // Recursive calls for left and right children
+        if (isLeft) {
+            // If we're coming from the left, go to the right child with length + 1
+            dfs(node.right, length + 1, false);
+            // Reset the length to 1 when changing direction
+            dfs(node.left, 1, true);
+        } else {
+            // If we're coming from the right, go to the left child with length + 1
+            dfs(node.left, length + 1, true);
+            // Reset the length to 1 when changing direction
+            dfs(node.right, 1, false);
+        }
+    }
+}
