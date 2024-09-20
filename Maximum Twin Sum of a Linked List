@@ -1,0 +1,50 @@
+class Solution {
+    public int pairSum(ListNode head) {
+        // Initialize the maximum twin sum
+        int maxTwinSum = 0;
+        
+        // Iterate through the linked list
+        ListNode current = head;
+        ListNode twin = reverseList(getSecondHalf(head));
+        
+        while (current != null && twin != null) {
+            // Calculate the twin sum for the current node and its twin
+            int twinSum = (current != null ? current.val : 0) + (twin != null ? twin.val : 0);
+            // Update the maximum twin sum if necessary
+            maxTwinSum = Math.max(maxTwinSum, twinSum);
+            // Move to the next pair of nodes
+            current = current.next;
+            twin = twin.next;
+        }
+        
+        return maxTwinSum;
+    }
+    
+    // Function to get the second half of the linked list
+    private ListNode getSecondHalf(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        
+        return slow;
+    }
+    
+    // Function to reverse a linked list
+    private ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+        
+        while (current != null) {
+            ListNode nextTemp = current.next;
+            current.next = prev;
+            prev = current;
+            current = nextTemp;
+        }
+        
+        return prev;
+    }
+}
