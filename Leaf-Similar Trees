@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+    public boolean leafSimilar(TreeNode root1, TreeNode root2) {
+        List<Integer> leafSequence1 = new ArrayList<>();
+        List<Integer> leafSequence2 = new ArrayList<>();
+        
+        // Collect leaf values for the first tree
+        collectLeafValues(root1, leafSequence1);
+        // Collect leaf values for the second tree
+        collectLeafValues(root2, leafSequence2);
+        
+        // Check if the leaf sequences are equal
+        return leafSequence1.equals(leafSequence2);
+    }
+    
+    private void collectLeafValues(TreeNode node, List<Integer> leafSequence) {
+        if (node == null) {
+            return;
+        }
+        
+        if (node.left == null && node.right == null) {
+            // Add the leaf value to the sequence
+            leafSequence.add(node.val);
+        }
+        
+        // Recursively collect leaf values for the left and right subtrees
+        collectLeafValues(node.left, leafSequence);
+        collectLeafValues(node.right, leafSequence);
+    }
+}
