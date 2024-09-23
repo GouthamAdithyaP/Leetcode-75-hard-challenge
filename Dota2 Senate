@@ -1,0 +1,33 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Solution {
+    public String predictPartyVictory(String senate) {
+        Queue<Integer> radiant = new LinkedList<>();
+        Queue<Integer> dire = new LinkedList<>();
+        int n = senate.length();
+        
+        // Initialize queues for Radiant and Dire senators
+        for (int i = 0; i < n; i++) {
+            if (senate.charAt(i) == 'R') {
+                radiant.offer(i);
+            } else {
+                dire.offer(i);
+            }
+        }
+        
+        while (!radiant.isEmpty() && !dire.isEmpty()) {
+            int radiantIndex = radiant.poll();
+            int direIndex = dire.poll();
+            
+            // The senator who acts first will ban the opponent senator's right in this round
+            if (radiantIndex < direIndex) {
+                radiant.offer(radiantIndex + n); // Banned Radiant senator comes back after all current senators have acted
+            } else {
+                dire.offer(direIndex + n); // Banned Dire senator comes back after all current senators have acted
+            }
+        }
+        
+        return radiant.isEmpty() ? "Dire" : "Radiant"; // Return the winner based on remaining senators
+    }
+}
