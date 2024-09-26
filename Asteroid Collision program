@@ -11,5 +11,4 @@ class Solution:
                     stack.append(asteroid)
                 elif stack[-1] == abs(asteroid):
                     stack.pop()
-        
         return stack
