@@ -5,7 +5,7 @@ class Solution:
         repetition_count = 0
         
         for char in s:
-            if char.isdigit():
+            if char.isdigit()
                 repetition_count = repetition_count * 10 + int(char)
             elif char == '[':
                 stack.append((current_string, repetition_count))
