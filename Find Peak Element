@@ -6,7 +6,6 @@ class Solution {
             int mid = left + (right - left) / 2;
             if (nums[mid] < nums[mid + 1]) {
                 // If the middle element is smaller than its right neighbor,
-                // the peak element must be on the right side
                 left = mid + 1;
             } else {
                 // If the middle element is greater than or equal to its right neighbor,
