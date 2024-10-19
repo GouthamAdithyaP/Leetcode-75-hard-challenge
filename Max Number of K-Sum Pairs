@@ -3,7 +3,6 @@ class Solution:
     def maxOperations(self, nums: List[int], k: int) -> int:
         freq = defaultdict(int)
         operations = 0
-
         for num in nums:
             if freq[k - num] > 0:
                 operations += 1
