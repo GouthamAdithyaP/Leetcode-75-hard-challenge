@@ -9,5 +9,4 @@ class Solution:
                 freq[k - num] -= 1
             else:
                 freq[num] += 1
-        
         return operations
