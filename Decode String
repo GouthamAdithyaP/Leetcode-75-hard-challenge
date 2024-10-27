@@ -15,5 +15,4 @@ class Solution:
                 current_string = prev_string + current_string * count
             else:
                 current_string += char
-        
         return current_string
