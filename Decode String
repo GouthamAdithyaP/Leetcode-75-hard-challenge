@@ -3,7 +3,6 @@ class Solution:
         stack = []
         current_string = ""
         repetition_count = 0
-        
         for char in s:
             if char.isdigit()
                 repetition_count = repetition_count * 10 + int(char)
