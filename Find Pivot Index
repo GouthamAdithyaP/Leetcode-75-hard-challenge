@@ -7,5 +7,4 @@ class Solution:
             if left_sum == total_sum - left_sum - num:
                 return i
             left_sum += num
-        
         return -1
