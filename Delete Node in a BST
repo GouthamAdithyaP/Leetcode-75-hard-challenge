@@ -3,7 +3,7 @@ class Solution:
         while node.left:
             node = node.left
         return node
-    
+
     def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
         if root is None:
             return None
