@@ -5,8 +5,7 @@ class Solution:
         return node
     def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
         if root is None:
-            return None
-        
+            return None 
         # Search for the node with the given key
         if key < root.val:
             root.left = self.deleteNode(root.left, key)
