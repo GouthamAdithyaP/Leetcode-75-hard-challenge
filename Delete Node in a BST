@@ -6,13 +6,12 @@ class Solution:
     def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
         if root is None:
             return None 
-
         if key < root.val:
             root.left = self.deleteNode(root.left, key)
         elif key > root.val:
             root.right = self.deleteNode(root.right, key)
         else:
-            # Node with the given key is found
+           
             if root.left is None:
                 return root.right
             elif root.right is None:
