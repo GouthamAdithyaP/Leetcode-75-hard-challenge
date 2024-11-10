@@ -7,7 +7,7 @@ class Solution {
             return 0;
         }
         int count = 0;
-        // Check if the current node is a good node
+        // Check if the current node is a good
         if (node.val >= maxSoFar) {
             count++;
         }
