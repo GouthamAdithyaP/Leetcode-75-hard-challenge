@@ -13,7 +13,6 @@ class Solution(object):
                 return True  # All flowers are planted
             i += 1
         return False  # Could not plant all flowers
-
 solution = Solution()
 print(solution.canPlaceFlowers([1,0,0,0,1], 1))  # Output: true
 print(solution.canPlaceFlowers([1,0,0,0,1], 2))  # Output: false
