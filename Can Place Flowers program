@@ -4,7 +4,7 @@ class Solution(object):
         :type flowerbed: List[int]
         :type n: int
         :rtype: bool
-        """
+        "
         i = 0
         while i < len(flowerbed):
             # Check if the current plot and its adjacent plots are empty
