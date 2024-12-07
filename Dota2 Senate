@@ -21,7 +21,7 @@ class Solution {
             if (radiantIndex < direIndex) {
                 radiant.offer(radiantIndex + n); // Banned Radiant senator comes back after all current senators have acted
             } else {
-                dire.offer(direIndex + n); // Banned Dire senator comes back after all current senators hav
+                dire.offer(direIndex + n); // Banned Dire senator comes back after all current senators
             }
         }
         
