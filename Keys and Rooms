@@ -1,7 +1,6 @@
 class Solution:
     def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
         visited = set()  # To keep track of visited rooms
-
         def dfs(room):
             visited.add(room)  # Mark the current room as visited
             for key in rooms[room]:
