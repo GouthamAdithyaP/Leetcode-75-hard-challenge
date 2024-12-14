@@ -6,7 +6,6 @@ class Solution:
             for key in rooms[room]:
                 if key not in visited:
                     dfs(key)  # Visit the next room
-    
         dfs(0)  # Start DFS from room 0
         
         # Check if all rooms have been visited
