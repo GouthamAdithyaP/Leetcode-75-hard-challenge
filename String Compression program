@@ -10,7 +10,6 @@ class Solution:
             while read_ptr < len(chars) and chars[read_ptr] == current_char:
                 read_ptr += 1
                 count += 1
-            
             chars[write_ptr] = current_char
             write_ptr += 1
             
