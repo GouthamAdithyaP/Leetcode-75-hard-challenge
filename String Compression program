@@ -12,7 +12,6 @@ class Solution:
                 count += 1
             chars[write_ptr] = current_char
             write_ptr += 1
-            
             if count > 1:
                 for digit in str(count):
                     chars[write_ptr] = digit
