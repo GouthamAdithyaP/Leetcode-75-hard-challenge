@@ -16,5 +16,4 @@ class Solution:
                 for digit in str(count):
                     chars[write_ptr] = digit
                     write_ptr += 1
-        
         return write_ptr
