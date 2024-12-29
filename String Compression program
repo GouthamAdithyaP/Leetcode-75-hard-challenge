@@ -2,7 +2,6 @@ class Solution:
     def compress(self, chars: List[str]) -> int:
         if len(chars) <= 1:
             return len(chars)
-
         write_ptr = 0
         read_ptr = 0
         
