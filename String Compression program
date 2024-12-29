@@ -4,7 +4,6 @@ class Solution:
             return len(chars)
         write_ptr = 0
         read_ptr = 0
-        
         while read_ptr < len(chars):
             current_char = chars[read_ptr]
             count = 0
