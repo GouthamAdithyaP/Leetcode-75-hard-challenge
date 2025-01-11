@@ -4,7 +4,7 @@ class Solution:
         # Check if the sets of characters are the same
         if set(word1) != set(word2):
             return False
-        # Count the frequency of characters in both strings
+        # Count the frequency of characters in both stri
         count1 = Counter(word1)
         count2 = Counter(word2)
         # Check if the frequency counts are the same
