@@ -7,7 +7,7 @@ class Solution:
         # Count the frequency of characters in both strings
         count1 = Counter(word1)
         count2 = Counter(word2)
-        
+    
         # Check if the frequency counts are the same
         if sorted(count1.values()) != sorted(count2.values()):
             return False
