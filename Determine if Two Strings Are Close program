@@ -10,5 +10,4 @@ class Solution:
         # Check if the frequency counts are the same
         if sorted(count1.values()) != sorted(count2.values()):
             return False
-        
         return True
