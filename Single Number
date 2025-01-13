@@ -7,7 +7,7 @@ class Solution {
         return result;
     }
 }
-/Example usage:
+/Example usage
 public class Main {
     public static void main(String[] args) {
         Solution sol = new Solution();
