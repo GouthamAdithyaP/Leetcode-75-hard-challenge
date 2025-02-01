@@ -5,7 +5,7 @@ class Solution {
         Queue<Integer> radiant = new LinkedList<>();
         Queue<Integer> dire = new LinkedList<>();
         int n = senate.length();
-        // Initialize queues for Radiant
+        // Initialize queues for Rad
         for (int i = 0; i < n; i++) {
             if (senate.charAt(i) == 'R') {
                 radiant.offer(i);
