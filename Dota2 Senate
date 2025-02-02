@@ -18,7 +18,7 @@ class Solution {
             
             // The senator who acts first will ban the opponent senator's right i
             if (radiantIndex < direIndex) {
-                radiant.offer(radiantIndex + n); // Banned Radiant senator comes back after all current senators have
+                radiant.offer(radiantIndex + n); // Banned Radiant senator comes back after all current 
             } else {
                 dire.offer(direIndex + n);
             }
