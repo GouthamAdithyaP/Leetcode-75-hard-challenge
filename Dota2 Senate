@@ -18,7 +18,7 @@ class Solution {
             
             // The senator who acts first
             if (radiantIndex < direIndex) {
-                radiant.offer(radiantIndex + n); // Banned Radiant senator 
+                radiant.offer(radiantIndex + n);
             } else {
                 dire.offer(direIndex + n);
             }
