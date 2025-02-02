@@ -16,7 +16,7 @@ class Solution {
             int radiantIndex = radiant.poll();
             int direIndex = dire.poll();
             
-            // The senator who acts first will ban the opponent senator's right in this round
+            // The senator who acts first will ban the opponent senator's right in this
             if (radiantIndex < direIndex) {
                 radiant.offer(radiantIndex + n); // Banned Radiant senator comes back after all current senators have acted
             } else {
