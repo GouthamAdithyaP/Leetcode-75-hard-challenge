@@ -24,6 +24,6 @@ class Solution {
             }
         }
         
-        return radiant.isEmpty() ? "Dire" : "Radiant"; // Return the winner base
+        return radiant.isEmpty() ? "Dire" : "Radiant"; // Return the winner
     }
 }
