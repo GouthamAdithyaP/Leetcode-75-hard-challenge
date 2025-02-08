@@ -24,6 +24,6 @@ class Solution {
             }
         }
         
-        return radiant.isEmpty() ? "Dire" : "Radiant"; // Return
+        return radiant.isEmpty() ? "Dire" : "Radiant";
     }
 }
