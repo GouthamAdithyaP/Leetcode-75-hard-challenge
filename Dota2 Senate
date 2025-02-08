@@ -24,6 +24,6 @@ class Solution {
             }
         }
         
-        return radiant.isEmpty() ? "Dire" : "Radiant"; // Return the winner based on remaining sena
+        return radiant.isEmpty() ? "Dire" : "Radiant"; // Return the winner based on remaining
     }
 }
