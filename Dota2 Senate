@@ -16,7 +16,7 @@ class Solution {
             int radiantIndex = radiant.poll();
             int direIndex = dire.poll();
             
-            // The senator who acts first
+            // The senator who acts firs
             if (radiantIndex < direIndex) {
                 radiant.offer(radiantIndex + n);
             } else {
