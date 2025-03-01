@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: bool
         i = 0
         while i < len(flowerbed):
-            # Check if the current plot and
+            # Check if
             if flowerbed[i] == 0 and (i == 0 or flowerbed[i - 1] == 0) and (i == len(flowerbed) - 1 or flowerbed[i + 1] == 0):
                 flowerbed[i] = 1  # Plant a flower
                 n -= 1  # Decrement the count of remaining flowers to be planted
