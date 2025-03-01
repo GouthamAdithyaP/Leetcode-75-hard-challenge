@@ -22,7 +22,6 @@ class Solution {
                 dire.offer(direIndex + n);
             }
         }
-        
         return radiant.isEmpty() ? "Dire" : "Radiant";
     }
 }
