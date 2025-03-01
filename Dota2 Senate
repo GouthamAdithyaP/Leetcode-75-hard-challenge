@@ -15,8 +15,7 @@ class Solution {
         while (!radiant.isEmpty() && !dire.isEmpty()) {
             int radiantIndex = radiant.poll();
             int direIndex = dire.poll();
-            
-
+        
             if (radiantIndex < direIndex) {
                 radiant.offer(radiantIndex + n);
             } else {
