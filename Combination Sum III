@@ -4,7 +4,6 @@ class Solution {
         backtrack(result, new ArrayList<>(), k, n, 1, 0);
         return result;
     }
-
     private void backtrack(List<List<Integer>> result, List<Integer> curr, int k, int n, int start, int sum) {
         if (curr.size() == k && sum == n) {
             result.add(new ArrayList<>(curr));
