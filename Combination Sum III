@@ -10,7 +10,6 @@ class Solution {
             result.add(new ArrayList<>(curr));
             return;
         }
-
         if (curr.size() == k || sum > n) {
             return;
         }
