@@ -10,7 +10,7 @@ class Solution {
 public class Main {
     public static void main(String[] args) {
         Solution sol = new Solution();
-        
+
         int[] result1 = sol.countBits(2);
         System.out.println(Arrays.toString(result1));
         int[] result2 = sol.countBits(5);
