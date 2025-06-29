@@ -3,7 +3,6 @@ class Solution {
         int m = word1.length();
         int n = word2.length();
         int[][] dp = new int[m + 1][n + 1];
-
         // Initialize the first row and column
         for (int i = 0; i <= m; i++) {
             dp[i][0] = i;
