@@ -13,7 +13,7 @@ public class Main {
         
         int[] result1 = sol.countBits(2);
         System.out.println(Arrays.toString(result1));
-        
+    
         int[] result2 = sol.countBits(5);
         System.out.println(Arrays.toString(result2));
     }
